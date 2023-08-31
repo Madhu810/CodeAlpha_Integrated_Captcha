@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sliding Images Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <style>
+    .carousel-inner img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    #image-carousel .carousel-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  bottom: 60px;
+  top: 70px;
+  left: 55px;
+  right: 55px;
+}
+
+#image-carousel .carousel-content {
+  background: rgba(4, 4, 4, 0.7);
+  padding: 20px;
+  color: #fff;
+  border-top: 5px solid #1bbd36;
+}
+
+#image-carousel .carousel-content h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+
+
+.post-card {
+    padding: 30px;
+    margin-bottom: 60px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+.post-card:hover {
+    transform: scale(1.1);
+  
+    border-color: #7fa5795e;
+    border-radius: 10px;
+  }
+   
+body {
+  font-family: Arial, sans-serif;
+  background: url(home4.jpg)no-repeat;
+  background-size: cover;
+    background-position: center;
+}
+
+header {
+  background-color: #341010;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.post-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 20px;
+}
+ /* Contact Section */
+ #contact {
+    padding: 50px 0;
+    background-color: #fff;
+  }
+  #contact h2 {
+    color: #333;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  </style>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+  </body>
+  <center><section id="projects" class="container mt-4">
+    <div><h1>BLOG WEBSITE</h1></div>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="post-card">
+          <h2>Write What you want to post</h2>
+          <form id="blogForm">
+            
+            <div class="form-group">
+              <label for="blogContent">Write Content</label>
+              <textarea style=background-color:#96938b class="form-control" id="blogContent" rows="5" required></textarea>
+            </div>
+            <center><button type="submit" class="btn btn-primary">Post</button></center>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container mt-4">
+    <div class="row" id="blogPosts">
+      <div class="col-lg-8">
+      
+        <div class="post-card">
+          <h2>Chat Gpt</h2>
+          <p>Posted on August 31, 2023</p>
+          <p>
+            What is Chat gpt?
+          How to use chat gpt?How the Chat gpt was build?On which models it is based? like this if you
+           any queries <a href="https://r.search.yahoo.com/_ylt=AwrKFuwjufBk1R0QrRm7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1693526435/RO=10/RU=https%3a%2f%2fopenai.com%2fblog%2fchatgpt/RK=2/RS=fSJzuJxcf9Y44wn199SIg3v.QFg-">Click Here</a> 
+          </p>
+        </div>
+
+        <div class="post-card">
+            <h2>Chandrayaan 3</h2>
+            <p>Posted on August 23, 2023</p>
+            <p>What is chadrayaan 3? How much it costs? How India did this lunar mission? In order to 
+              do this impossible lunar mission How the ISRO scientists worked with passion about their country?
+              Like this You have any queries <a href="https://r.search.yahoo.com/_ylt=Awr1ShhxufBkEvYROB27HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1693526514/RO=10/RU=https%3a%2f%2fen.wikipedia.org%2fwiki%2fChandrayaan-3/RK=2/RS=7T5WPCC0WFxjqFq2xW3veRASyb8-">Click Here</a> 
+          </div>
+
+
+          <div class="post-card">
+              <h2>Praggnanandha</h2>
+              <p>Posted on August 25, 2023</p>
+              <p> 
+              Who is praggnanandha?How he become world's top second chess player? Bio Graphy of Pragg?
+               Like this if you have any queries <a href="https://en.wikipedia.org/wiki/R_Praggnanandhaa">Click Here</a> </p>
+            </div>
+    
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- ... Your existing footer code ... -->
+
+  <!-- JavaScript code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // JavaScript code for handling the form submission
+    $(document).ready(function() {
+      $("#blogForm").submit(function(event) {
+        event.preventDefault();
+
+        // Get the values from the form
+        const title = $("#blogTitle").val();
+        const content = $("#blogContent").val();
+
+        // Create a new blog post
+        const newBlogPost = `
+          <div class="post-card">
+            <h2>${title}</h2>
+            <p>Posted on ${new Date().toLocaleDateString()}</p>
+            <p>${content}</p>
+            <a href="#">Read more</a>
+          </div>
+        `;
+
+        // Append the new blog post to the existing blog posts
+        $("#blogPosts").append(newBlogPost);
+
+        // Clear the form inputs
+        $("#blogTitle").val("");
+        $("#blogContent").val("");
+      });
+    });
+  </script>
+   <!-- Contact Section -->
+   <section id="contact" style=background-color:#5f5f64 class="container">
+    <h2>If wanna contact me?</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Send Message</button>
+    </form>
+  </section>
+  <footer>
+    <p>&copy; 2023 My Blog. All rights reserved.</p>
+  </footer>
+</center>
+</body>
+</html>
+</html>
